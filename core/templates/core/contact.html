@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+
+{% block title%} Contacto {% endblock %}
+
+{% block background %}{% load static%}{% static 'core/img/acerca.jpg' %}{% endblock %}
+<!--El block backgroung se tiene que poner todo en una sola linea para evitar problemas-->
+  {% block estilosextras %}
+<link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+
+ {% endblock %}
+{% block headers %}
+
+<h1>Contacto</h1>
+<span class="subheading">Tienes algo que decir?</span>
+
+{% endblock %}
+
+{% block content%}
+ <div class="row">
+
+    <div class="col-lg-8 col-md-10 mx-auto">
+            <p>Es un gusto que lleges a esta sección, charlemos.</p>
+            <p>Sera bueno saber que te has interesado en mi trabajo y habilidades</p>
+            <p><b>Honorarios:</b> 60€/h (precio base)</p>
+            </div>
+
+    <hr>
+</div>
+    <section class="contacto">
+    <div class="contacto">
+        <h3 id="contacto" class="titulo">No te quedes con dudas, contactame</h3>
+
+        <form class="formulario" action="https://formspree.io/f/xyyaadyr" method="POST">
+            <input type="text" placeholder="Nombre" name="nombre" required>
+            <input type="correo" placeholder="Correo" name="correo" required>
+            <textarea name="Descripcion" placeholder="Mensaje"></textarea>
+            <input class="boton" href="mailto:faty.aome.rojas14@gmail.com" type="submit" value="Enviar">
+        </form>
+    </div>
+    </section>
+
+  
+
+
+
+{% endblock %}

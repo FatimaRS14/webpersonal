@@ -1,0 +1,63 @@
+{% extends 'core/base.html' %}
+
+{% block title%} Acerca de {% endblock %}
+
+{% block background %}{% load static%}{% static 'core/img/2.jpg' %}{% endblock %}
+<!--El block backgroung se tiene que poner todo en una sola linea para evitar problemas-->
+{% block estilosextras %}
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="{% static 'core/css/card.css' %}">
+ <link rel="stylesheet" href="{% static 'core/css/footer.css' %}">
+{% endblock %}
+
+{% block headers %}
+
+<h1>Acerca de</h1>
+<span class="subheading">Conoce mas sobre mi</span>
+
+{% endblock %}
+
+{% block content.1%}
+<div class="row">
+ 
+  <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid avatar" src="{% static 'core/img/avatar.jpg' %}" alt="">
+          </div>
+          <div class="col-lg-7 col-md-8">
+            <h1 class="title-1">Conocimientos y habilidades</h2>   
+            <p class="description">TSU. Desarrollo de Software Multiplataforma <br> Universidad Tecnológica de Tlaxcala <br> Tengo habilidades en programación especialmente el el área de backend y creación de circuitos con diferentes placas y sensores</p>
+          </div>
+
+
+ </div>
+ {% endblock %}
+
+ {% block content%}
+
+
+  <section>
+ 
+ {%for skill in skill %}
+ 
+  <div class="card">
+    <div class="image">
+      <img src="{{ skill.image.url }}"/>
+    </div>
+    <div class="details">
+      <div class="center">
+        <h1>{{skill.title}}</h1>
+        <p>{{skill.content}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+ </section>
+  
+
+ {% endfor%}
+ 
+ 
+ 
+{% endblock %}
